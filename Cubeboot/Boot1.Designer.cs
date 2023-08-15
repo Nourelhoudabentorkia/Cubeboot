@@ -36,6 +36,8 @@
             this.btnEff = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnProg = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             this.close.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.close.ForeColor = System.Drawing.Color.Crimson;
-            this.close.Location = new System.Drawing.Point(1232, -2);
+            this.close.Location = new System.Drawing.Point(1286, -2);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(39, 37);
             this.close.TabIndex = 0;
@@ -58,7 +60,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -66,7 +68,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(424, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(355, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(477, 140);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(873, 10);
+            this.label1.Location = new System.Drawing.Point(804, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 45);
             this.label1.TabIndex = 3;
@@ -87,18 +89,18 @@
             // 
             this.btnEff.BackColor = System.Drawing.Color.Crimson;
             this.btnEff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEff.Location = new System.Drawing.Point(267, 221);
+            this.btnEff.Location = new System.Drawing.Point(277, 292);
             this.btnEff.Name = "btnEff";
             this.btnEff.Size = new System.Drawing.Size(151, 38);
             this.btnEff.TabIndex = 4;
-            this.btnEff.Text = "Effacer";
+            this.btnEff.Text = "Erase";
             this.btnEff.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Crimson;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(267, 380);
+            this.button2.Location = new System.Drawing.Point(277, 451);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 38);
             this.button2.TabIndex = 5;
@@ -110,7 +112,7 @@
             // 
             this.btnProg.BackColor = System.Drawing.Color.Crimson;
             this.btnProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProg.Location = new System.Drawing.Point(267, 297);
+            this.btnProg.Location = new System.Drawing.Point(277, 368);
             this.btnProg.Name = "btnProg";
             this.btnProg.Size = new System.Drawing.Size(151, 38);
             this.btnProg.TabIndex = 6;
@@ -118,13 +120,26 @@
             this.btnProg.UseVisualStyleBackColor = false;
             this.btnProg.Click += new System.EventHandler(this.btnProg_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1155, 292);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 50);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Connect";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Boot1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkBlue;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1274, 609);
+            this.ClientSize = new System.Drawing.Size(1515, 609);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnProg);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnEff);
@@ -153,5 +168,7 @@
         private System.Windows.Forms.Button btnEff;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnProg;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

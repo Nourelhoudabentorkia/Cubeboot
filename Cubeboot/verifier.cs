@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,16 @@ using Cubeboot;
 namespace Cubeboot
 {
     public partial class verifier : Form
+
     {
+        private static string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        private static string directory = Path.GetDirectoryName(exePath);
+
+        private string srec_cat_path = $"{directory}\\Tools\\STM32ProgrammerCLI\\STM32_Programmer_CLI.exe";
+
+        private Process _process;
+
+        char[] buffer = new char[4096];
         public verifier()
         {
             InitializeComponent();
@@ -28,6 +39,56 @@ namespace Cubeboot
         private void verifier_Load(object sender, EventArgs e)
         {
 
+            StartCLICommand("COM8");
         }
+
+        private async Task ReadOutputAsync()
+        {
+
+            using (StreamReader reader = _process.StandardOutput)
+            {
+                while (!_process.HasExited)
+                {
+                    int bytesRead = await reader.ReadAsync(buffer, 0, buffer.Length);
+
+
+                    if (bytesRead > 0)
+                    {
+                        txtVer.Invoke(new Action(() =>
+                        {
+                            txtVer.Text += new string(buffer, 0, bytesRead);
+
+                        }));
+                        
+                       
+                    }
+                }
+            }
+        }
+
+
+
+        public void StartCLICommand(string ComPort)
+        {
+            string arguemnts = $"-c {ComPort} -v"; 
+            _process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = srec_cat_path,
+                    Arguments = arguemnts,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = false,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                },
+                EnableRaisingEvents = true
+            };
+
+            _process.Start();
+            Task.Run(ReadOutputAsync);
+        }
+
     }
 }

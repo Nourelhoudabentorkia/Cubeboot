@@ -30,6 +30,7 @@
         {
             this.LblVerifier = new System.Windows.Forms.Label();
             this.Lblver = new System.Windows.Forms.Label();
+            this.txtVer = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LblVerifier
@@ -56,6 +57,16 @@
             this.Lblver.Text = "X";
             this.Lblver.Click += new System.EventHandler(this.label1_Click);
             // 
+            // txtVer
+            // 
+            this.txtVer.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtVer.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtVer.Location = new System.Drawing.Point(19, 88);
+            this.txtVer.Multiline = true;
+            this.txtVer.Name = "txtVer";
+            this.txtVer.Size = new System.Drawing.Size(555, 286);
+            this.txtVer.TabIndex = 2;
+            // 
             // verifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -63,6 +74,7 @@
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.txtVer);
             this.Controls.Add(this.Lblver);
             this.Controls.Add(this.LblVerifier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -79,5 +91,6 @@
 
         private System.Windows.Forms.Label LblVerifier;
         private System.Windows.Forms.Label Lblver;
+        private System.Windows.Forms.TextBox txtVer;
     }
 }

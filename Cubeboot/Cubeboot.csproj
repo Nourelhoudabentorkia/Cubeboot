@@ -55,6 +55,7 @@
     <Compile Include="boutton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Common\CLI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="programmer.cs">
       <SubType>Form</SubType>
@@ -96,6 +97,337 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\cert_leaf_chain.b64" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\Crypto\DA_Config_Certificate.obk" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\Crypto\DA_Config_Password.obk" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\key_3_leaf.pem" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\NonCrypto\DA_Config_Certificate.obk" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\NonCrypto\DA_Config_Password.obk" />
+    <None Include="Tools\STM32ProgrammerCLI\DA_Default_Config\password.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\512W3A_STM3210E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS42S32400F_STM32F469I-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS42S32800G_STM32769I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV102416BLL_STM324x9I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV102416BLL_STM324xG-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV102416BLL_STM32769I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\EWARM\IS61WV51216BLL_STM3210E-EVAL.ewd" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\EWARM\IS61WV51216BLL_STM3210E-EVAL.ewp" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\EWARM\IS61WV51216BLL_STM3210E-EVAL.ewt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\EWARM\IS61WV51216BLL_STM3210E-EVAL.eww" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\EWARM\Target.icf" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\MDK-ARM\IS61WV51216BLL_STM3210E-EVAL.uvopt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\MDK-ARM\IS61WV51216BLL_STM3210E-EVAL.uvproj" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\MDK-ARM\Target.lin" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\TrueSTUDIO\IS61WV51216BLL_STM3210E-EVAL\.cproject" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\TrueSTUDIO\IS61WV51216BLL_STM3210E-EVAL\.project" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Project\TrueSTUDIO\IS61WV51216BLL_STM3210E-EVAL\stm32_flash.ld" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS66WV51216EBLL_STM32723E-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS66WV51216EBLL_STM32F413H-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M24LR-A_STM32303C-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M24LR-A_STM32373C-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M24LR-A_STM324x9I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\EWARM\M25P64_STM3210E-EVAL.ewd" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\EWARM\M25P64_STM3210E-EVAL.ewp" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\EWARM\M25P64_STM3210E-EVAL.ewt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\EWARM\M25P64_STM3210E-EVAL.eww" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\EWARM\Target.icf" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\MDK-ARM\M25P64_STM3210E-EVAL.uvopt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\MDK-ARM\M25P64_STM3210E-EVAL.uvproj" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\MDK-ARM\Target.lin" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\TrueSTUDIO\M25P64_STM3210E-EVAL\.cproject" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\TrueSTUDIO\M25P64_STM3210E-EVAL\.project" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Project\TrueSTUDIO\M25P64_STM3210E-EVAL\stm32_flash.ld" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29EWLA_STM32469I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\EWARM\M29W128GL_STM3210E-EVAL.ewd" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\EWARM\M29W128GL_STM3210E-EVAL.ewp" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\EWARM\M29W128GL_STM3210E-EVAL.ewt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\EWARM\M29W128GL_STM3210E-EVAL.eww" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\EWARM\Target.icf" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\MDK-ARM\M29W128GL_STM3210E-EVAL.uvopt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\MDK-ARM\M29W128GL_STM3210E-EVAL.uvproj" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\MDK-ARM\Target.lin" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\TrueSTUDIO\M29W128GL_STM3210E-EVAL\.cproject" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\TrueSTUDIO\M29W128GL_STM3210E-EVAL\.project" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Project\TrueSTUDIO\M29W128GL_STM3210E-EVAL\stm32_flash.ld" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM324x9I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM32F756G-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM32F756G-EVAL2.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM32H743I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM32H7B3I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM32L476G-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25QL128A_STM32F469I-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25QL512ABB_STM32G474E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25QL512A_STM32469I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25QL512A_STM32756G-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25QL512A_STM32769I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25TL01G_STM32H743I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25TL01G_STM32H745I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25TL01G_STM32H747I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25TL01G_STM32H747I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT25TL01G_STM32H750B-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MT48LC2M32B2_STM324x9I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MTFC4GACAJCN_STM32H745I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MTFC4GACAJCN_STM32H750B-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25L4006E_STM32WL5M-SUBG.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25L512G_STM32F723E-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25L512G_STM32F7308-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25L512G_STM32F769I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25L6433F_STM32U535B-NUCLEO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H573I-DK-RevB-SFIx-BL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H573I-DK-RevB-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H573I-DK-RevB.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H573I-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H725G-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H735G-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B0x-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-DISCO-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-EVAL-REVA-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-EVAL-REVA.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-EVAL-REVB-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32H7B3I-EVAL-REVB.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L4P5G-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L4R9I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L4R9I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L552E-EVAL-SFIX-BL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L552E-EVAL-SFIX.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L552E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L562E-DK-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32L562E-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U575I-EVAL-SFIX-BL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U575I-EVAL-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U575I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U585I-IOT02A-SFIx-BL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U585I-IOT02A-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U585I-IOT02A.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U59x.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U5x9J-DK-SFIx-BL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25LM51245G_STM32U5x9J-DK-SFIx.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25R6435F_STM32L496G-BRISK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25R6435F_STM32L496G-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX25UM51245G_STM32U5x9J-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX66LM1G45G_STM32U5G9J-DK2.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\MX66UW1G45G_STM32H7S78-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32412G-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32469I-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32F413H-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32F746G-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32F7508-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q128A_STM32L476G-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32446E-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32469I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\EWARM\N25Q256A_STM32L476G-EVAL.ewd" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\EWARM\N25Q256A_STM32L476G-EVAL.ewp" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\EWARM\N25Q256A_STM32L476G-EVAL.ewt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\EWARM\N25Q256A_STM32L476G-EVAL.eww" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\EWARM\Target.icf" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\MDK-ARM\N25Q256A_STM32L476G-EVAL.uvopt" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\MDK-ARM\N25Q256A_STM32L476G-EVAL.uvproj" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\TrueSTUDIO\N25Q256A_STM32L476G-EVAL\.cproject" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\TrueSTUDIO\N25Q256A_STM32L476G-EVAL\.project" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\TrueSTUDIO\N25Q256A_STM32L476G-EVAL\Debug.elf.launch" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\TrueSTUDIO\N25Q256A_STM32L476G-EVAL\_FLASH.ld" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Loader_Files\Loader_Src.c~RF44aa9c15.TMP" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL_Cube.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\PC28F128M29_STM32F769I-EVAL.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\S25FL128S_STM32WB5MM-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\W25Q128JVEIQ_STM32F746G-DISCO.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\ExternalLoader\W25Q128JVEIQ_STM32F7508-DK.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x410.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x411.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x412.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x413.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x414.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x415.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x416.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x417.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x418.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x419.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x420.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x421.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x422.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x423.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x425.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x427.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x428.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x429.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x430.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x431.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x432.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x433.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x434.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x435.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x436.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x437.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x438.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x439.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x440.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x441.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x442.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x443.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x444.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x445.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x446.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x447.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x448.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x449.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x450.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x451.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x452.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x453.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x455.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x456.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x457.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x458.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x460.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x461.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x462.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x463.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x464.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x466.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x467.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x468.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x469.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x470.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x471.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x472.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x474.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x476.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x479.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x480.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x481.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x482.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x483.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x484.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x492.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x494.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x494_FUS_Operator.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x494_nonSecure.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x495.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x495_FUS_Operator.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x495_nonSecure.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x496-nonSecure.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x496.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x496_FUS_Operator.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x497.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\0x500.stldr" />
+    <None Include="Tools\STM32ProgrammerCLI\FlashLoader\mask.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\HSM\data\P11_Objects_Table.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Tools\STM32ProgrammerCLI\IN.hex">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\input.hex">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Tools\STM32ProgrammerCLI\jre\ASSEMBLY_EXCEPTION" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\accessibility.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\calendars.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\classlist" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\cmm\CIEXYZ.pf" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\cmm\GRAY.pf" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\cmm\LINEAR_RGB.pf" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\cmm\PYCC.pf" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\cmm\sRGB.pf" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\content-types.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\currency.data" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\ext\meta-index" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\flavormap.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\fontconfig.bfc" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\fontconfig.properties.src" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\hijrah-config-umalqura.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\i386\jvm.cfg" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\cursors.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\javafx.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\logging.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\management\jmxremote.access" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\management\jmxremote.password.template" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\management\management.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\management\snmp.acl.template" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\meta-index" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\net.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\psfont.properties.ja" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\psfontj2d.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\security\blacklisted.certs" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\security\cacerts" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\security\java.policy" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\security\java.security" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\sound.properties" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\tzdb.dat" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\lib\tzmappings" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\LICENSE" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\release" />
+    <None Include="Tools\STM32ProgrammerCLI\jre\THIRD_PARTY_README" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H5_48402011_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H5_48402211_SMU._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H73x_4830100C_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H73x_4830100C_SMI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H75_45001001_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H75_45001001_SMI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H75_45002001_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H75_45002001_SMI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H7B_48001004_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32H7B_48001004_SMI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32L4_46201002_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32L4_46202002_SFI._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32L5_47201003_SFI._01000000_01000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32MP13_5010100D_SSP._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32MP15_5000200A_SSP._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32MP15_5000300A_SSP._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32MP15_5010100D_SSP._01000000_00000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32U5_45501015_SFI._01000000_02000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32U5_47601016_SFI._01000000_02000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32U5_4810200F_SFI._01000000_02000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32U5_4820200B_SFI._01000000_02000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\PersoPackages\STM32WL_49701005_SFI._01000000_01000000.enc.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\H5\enc_signed_RSSe_SFI_STM32H5_v2.0.0.0.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\L5\enc_signed_RSSe_sfi.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_2M.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_4M.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_4M_Tiger.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_512K.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\RSSe\WL\enc_signed_RSSe_sfi.bin" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\key_area.kcsv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H5_2M.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H723_733_725_735_730.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H742_743_753_750.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H745_755_747_757.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H7A_B.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L462.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L5.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_2M.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_4M.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_512K.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WBA.csv" />
+    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WL.csv" />
+    <Content Include="Tools\STM32ProgrammerCLI\stlibp11_SAM.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32CubeProgrammer.l4j.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Tools\STM32ProgrammerCLI\STM32WLScripts\SetRDPLevelCM0.bat" />
+    <None Include="Tools\STM32ProgrammerCLI\STM32WLScripts\SetRDPLevelCM4.bat" />
+    <None Include="Tools\STM32ProgrammerCLI\STM32WLScripts\UnlockChip.bat" />
+    <None Include="Tools\STM32ProgrammerCLI\Template\McuBootPrototype.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tools\STM32ProgrammerCLI\Template\OBkeyPrototype.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tools\STM32ProgrammerCLI\Template\PrototypeGenCertif.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tools\STM32ProgrammerCLI\Utilities\Windows\LICENSE.ImgTool" />
+    <None Include="Tools\STM32ProgrammerCLI\Utilities\Windows\LICENSE.psa_adac_arm" />
+    <Content Include="Tools\STM32ProgrammerCLI\version">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -106,9 +438,383 @@
     <Content Include="Resources\pngwing.com %281%291.png" />
     <Content Include="Resources\pngwing.com.png" />
     <Content Include="Resources\téléchargement.png" />
+    <Content Include="Tools\STM32ProgrammerCLI\CubeProgrammer_API.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\DebugAuthPermissions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\arm_common_tables.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\arm_math.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0plus.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm3.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4_simd.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cmFunc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_cmInstr.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_sc000.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\CMSIS_Files\core_sc300.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm3210e_eval_fsmc_sram.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_conf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_fsmc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_gpio.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_rcc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Library_Files\system_stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Includes\Loader_Files\Dev_Inf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Library_Files\stm3210e_eval_fsmc_sram.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_fsmc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_gpio.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_rcc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Library_Files\system_stm32f10x.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Loader_Files\Dev_Inf.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\IS61WV51216BLL_STM3210E-EVAL\Sources\Loader_Files\Loader_Src.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\arm_common_tables.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\arm_math.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0plus.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cm3.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4_simd.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cmFunc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_cmInstr.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_sc000.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\CMSIS_Files\core_sc300.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm3210e_eval.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32f10x_conf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32f10x_gpio.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32f10x_rcc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32f10x_spi.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\stm32_eval_spi_flash.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Library_Files\system_stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Includes\Loader_Files\Dev_Inf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\stm3210e_eval.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\stm32f10x_gpio.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\stm32f10x_rcc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\stm32f10x_spi.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\stm32_eval_spi_flash.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Library_Files\system_stm32f10x.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Loader_Files\Dev_Inf.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M25P64_STM3210E-EVAL\Sources\Loader_Files\Loader_Src.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\arm_common_tables.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\arm_math.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm0plus.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm3.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cm4_simd.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cmFunc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_cmInstr.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_sc000.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\CMSIS_Files\core_sc300.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm3210e_eval_fsmc_nor.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_conf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_fsmc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_gpio.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\stm32f10x_rcc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Library_Files\system_stm32f10x.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Includes\Loader_Files\Dev_Inf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Library_Files\stm3210e_eval_fsmc_nor.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_fsmc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_gpio.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Library_Files\stm32f10x_rcc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Library_Files\system_stm32f10x.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Loader_Files\Dev_Inf.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\M29W128GL_STM3210E-EVAL\Sources\Loader_Files\Loader_Src.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\arm_common_tables.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\arm_math.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cm0.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cm0plus.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cm3.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cm4.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cm4_simd.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cmFunc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_cmInstr.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_sc000.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\CMSIS_Files\core_sc300.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_conf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_gpio.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_it.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_quadspi.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_rcc.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\stm32l4xx_syscfg.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Library_Files\system_stm32l4xx.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Includes\Loader_Files\Dev_Inf.h" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Project\MDK-ARM\loader.sct" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Library_Files\stm32l4xx_gpio.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Library_Files\stm32l4xx_quadspi.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Library_Files\stm32l4xx_rcc.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Library_Files\stm32l4xx_syscfg.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Library_Files\system_stm32l4xx.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Loader_Files\Dev_Inf.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\ExternalLoader\N25Q256A_STM32L476G-EVAL\Sources\Loader_Files\Loader_Src.c" />
+    <Content Include="Tools\STM32ProgrammerCLI\FileManager.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\HSM\data\P11_Objects_Table.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\HSM_P11_Lib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-console-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-datetime-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-debug-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-file-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-file-l1-2-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-file-l2-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-handle-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-heap-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-localization-l1-2-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-memory-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-profile-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-string-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-synch-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-synch-l1-2-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-timezone-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-core-util-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-conio-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-convert-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-environment-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-heap-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-locale-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-math-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-private-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-process-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-string-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-time-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\api-ms-win-crt-utility-l1-1-0.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\attach.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\awt.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\client\jvm.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\client\Xusage.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\concrt140.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\decora_sse.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\dt_shmem.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\dt_socket.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\fontmanager.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\freetype.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\fxplugins.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\glass.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\glib-lite.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\gstreamer-lite.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\hprof.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\instrument.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\j2pcsc.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\j2pkcs11.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jaas_nt.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jabswitch.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\java-rmi.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\java.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\java.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\JavaAccessBridge-32.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\JavaAccessBridge.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\javafx_font.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\javafx_iio.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\javaw.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\java_crw_demo.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jawt.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\JAWTAccessBridge-32.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\JAWTAccessBridge.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jdwp.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jfxmedia.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jjs.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jli.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jpeg.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jsdt.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jsound.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\jsoundds.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\keytool.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\kinit.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\klist.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\ktab.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\lcms.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\management.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\mlib_image.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\msvcp120.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\msvcp140.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\msvcr120.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\net.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\nio.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\npt.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\orbd.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\pack200.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\policytool.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\prism_common.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\prism_d3d.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\prism_sw.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\rmid.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\rmiregistry.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\sawindbg.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\servertool.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\server\jvm.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\server\Xusage.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\splashscreen.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\sunec.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\sunmscapi.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\tnameserv.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\ucrtbase.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\unpack.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\unpack200.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\vcruntime140.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\verify.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\w2k_lsa_auth.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\WindowsAccessBridge-32.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\WindowsAccessBridge.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\bin\zip.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\charsets.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\access-bridge-32.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\access-bridge.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\cldrdata.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\dnsns.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\jaccess.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\jfxrt.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\localedata.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\nashorn.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\sunec.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\sunjce_provider.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\sunmscapi.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\sunpkcs11.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\ext\zipfs.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\invalid32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_CopyDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_CopyNoDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_LinkDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_LinkNoDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_MoveDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\images\cursors\win32_MoveNoDrop32x32.gif" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\jce.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\jfxswt.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\jsse.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\jvm.hprof.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\management-agent.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\resources.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\rt.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\security\policy\limited\local_policy.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\security\policy\limited\US_export_policy.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\security\policy\unlimited\local_policy.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\lib\security\policy\unlimited\US_export_policy.jar" />
+    <Content Include="Tools\STM32ProgrammerCLI\jre\readme.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\libeay32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\libgcc_s_dw2-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\libstdc++-6.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\libwinpthread-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\mfc120.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\msvcp120.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\msvcr100.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\msvcr120.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\msvcrt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\PersoPackages\Readme.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\platforms\qwindows.dll" />
+    <Content Include="Tools\STM32ProgrammerCLI\Preparation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\psa_sdm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5DBus.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Gui.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Network.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Script.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5SerialPort.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Widgets.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5Xml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\Qt5XmlPatterns.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\stlibp11_SAM.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STLinkUSBDriver.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32CubeProgrammer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32MP_KeyGen_CLI.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32MP_SigningTool_CLI.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32TrustedPackageCreator.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32TrustedPackageCreator_CLI.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\STM32WLScripts\Readme.txt" />
+    <Content Include="Tools\STM32ProgrammerCLI\STM32_Programmer_CLI.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_CertifGen_Data_Base\STM32_CertifGen_DB_0x484.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Dual_Core.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Single_Core.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x455.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x462.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x472.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x480.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x481.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x482.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x483.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x484.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x497.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\Utilities\Windows\imgtool.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\Utilities\Windows\PSA_ADAC.exe" />
+    <Content Include="Tools\STM32ProgrammerCLI\xerces-c_3_1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tools\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

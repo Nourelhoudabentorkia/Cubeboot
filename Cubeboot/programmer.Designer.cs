@@ -79,6 +79,7 @@
             this.TxtRun.Name = "TxtRun";
             this.TxtRun.Size = new System.Drawing.Size(550, 288);
             this.TxtRun.TabIndex = 11;
+            this.TxtRun.TextChanged += new System.EventHandler(this.TxtRun_TextChanged);
             // 
             // programmer
             // 

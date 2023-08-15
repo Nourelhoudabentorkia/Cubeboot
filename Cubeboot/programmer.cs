@@ -53,5 +53,9 @@ namespace Cubeboot
         {
 
         }
+
+        private void TxtRun_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
