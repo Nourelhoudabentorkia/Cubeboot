@@ -5,8 +5,10 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cubeboot;
@@ -16,6 +18,9 @@ namespace Cubeboot
     public partial class verifier : Form
 
     {
+        public string[] AvailablePorts;//
+        public SerialPort test;//
+
         private static string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
         private static string directory = Path.GetDirectoryName(exePath);
 
@@ -27,6 +32,7 @@ namespace Cubeboot
         public verifier()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,8 +44,14 @@ namespace Cubeboot
 
         private void verifier_Load(object sender, EventArgs e)
         {
+            if (test.IsOpen)
+            {
+                test.Close();
+            }
+            Task.Delay(1000);
 
-            StartCLICommand("COM8");
+            StartCLICommand(test.PortName);
+
         }
 
         private async Task ReadOutputAsync()
@@ -90,5 +102,9 @@ namespace Cubeboot
             Task.Run(ReadOutputAsync);
         }
 
+        private void txtVer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

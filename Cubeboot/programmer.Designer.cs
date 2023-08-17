@@ -61,7 +61,7 @@
             // 
             // btnRun
             // 
-            this.btnRun.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRun.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRun.ForeColor = System.Drawing.Color.Red;
             this.btnRun.Location = new System.Drawing.Point(48, 56);
@@ -74,7 +74,8 @@
             // 
             // TxtRun
             // 
-            this.TxtRun.Location = new System.Drawing.Point(29, 135);
+            this.TxtRun.BackColor = System.Drawing.SystemColors.InfoText;
+            this.TxtRun.Location = new System.Drawing.Point(27, 128);
             this.TxtRun.Multiline = true;
             this.TxtRun.Name = "TxtRun";
             this.TxtRun.Size = new System.Drawing.Size(550, 288);
@@ -85,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkBlue;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.TxtRun);
