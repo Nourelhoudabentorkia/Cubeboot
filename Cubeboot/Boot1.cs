@@ -63,22 +63,7 @@ namespace Cubeboot
         }
         private void Boot1_Load(object sender, EventArgs e)
         {
-            try
-            {
-               // label2.Visible = false;
-                string[] ports = SerialPort.GetPortNames();
-                cmbCon.Items.AddRange(ports);
-                RefreshComPorts();
-                // public static System.Windows.Forms.Cursor WaitCursor { get; }
-                ////Cursor.Current = Cursors.WaitCursor;
-                ////Cursor.Current = Cursors.Default;
-                Application.UseWaitCursor = false;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            
         }
 
 
@@ -144,22 +129,14 @@ namespace Cubeboot
         private async void cmbCon_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-            if (cmbCon.SelectedItem != null)
-            {
-                ComPort.BaudRate = 9600;
-                ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
-                verifierForm.test = ComPort;
-
-
-
-            }
+          
             
         }
 
 
             private void button3_Click(object sender, EventArgs e)
             {
-                RefreshComPorts();
+              
             }
 
             private void pictureBox3_Click(object sender, EventArgs e)
@@ -169,7 +146,7 @@ namespace Cubeboot
 
             private void X_Click(object sender, EventArgs e)
             {
-                Application.Exit();
+                
             }
 
 
@@ -182,38 +159,7 @@ namespace Cubeboot
 
             private async void RunBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                string regexPattern = @"^COM\d+$";
-                Regex regex = new Regex(regexPattern);
-
-                if (!regex.IsMatch(cmbCon.Text) || (!checkErase.Checked && !checkverify.Checked && !checkread.Checked && !checkwrite.Checked && !checkBlank.Checked))
-                {
-                    MessageBox.Show("check Input ", "Erreur de port", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-
-                result.Clear();
-                RunBtn.Enabled = false;
-                // label2.Visible = true;
-                StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked);
-                //label2.Visible = true;
-                Application.UseWaitCursor = true;
-                //
-
-                //else
-                //{
-                //    MessageBox.Show("Please connect to the port first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
-            }
-            catch (Exception ex)
             
-            {
-                Console.WriteLine(ex.Message);
-            }
-
 
         }
             private async Task ReadOutputAsync()
@@ -257,8 +203,26 @@ namespace Cubeboot
                 }
             if (checkwrite.Checked)
             {
+                //btnBrowse.Visible = true;
+                //Browseread.Visible = false;
+                //richTextread.Visible = false;
+                //richTextBox1.Visible = true;
+                if (checkadress.Checked)
+                {
+                    arguemnts += $"-w {richTextBox1.Text} 0x08000000 ";
+                }
+                else
+                {
+                    string regexPattern = @"^0x[0-9A-Fa-f]{8}$";
+                    string regexPattern1 = @"^\d{3}$";
+                    Regex regex = new Regex(regexPattern);
+                    Regex regex1 = new Regex(regexPattern1);
+                    if (regex.IsMatch(richTextBox2.Text) && regex1.IsMatch(richTextBox3.Text))
+                    {
+                        arguemnts += $"-w {richTextBox1.Text} {richTextBox2.Text} {richTextBox3.Text}";
+                    }
 
-                arguemnts += $"-w {richTextBox1.Text} 0x08000000 ";
+                }
             }
             if (checkverify.Checked)
                 {
@@ -267,6 +231,10 @@ namespace Cubeboot
            
             if (checkread.Checked)
             {
+                //btnBrowse.Visible = false;
+                //Browseread.Visible = true;
+                //richTextread.Visible = true;
+                //richTextBox1.Visible = false;
                 arguemnts += $"-r 0x08000000 0x400 {richTextBox1.Text}";
             }
            if (checkBlank.Checked)
@@ -299,17 +267,7 @@ namespace Cubeboot
 
             private void btnbrowse_Click(object sender, EventArgs e)
             {
-                OpenFileDialog file = new OpenFileDialog();
-
-                if (file.ShowDialog() == DialogResult.OK)
-                {
-
-                    file.InitialDirectory = "c:\\";
-                    file.Filter = "Hex Files (*.hex)|*.hex|All Files (*.*)|*.*";
-                    file.FilterIndex = 2;
-                    file.RestoreDirectory = true;
-                richTextBox1.Text = file.FileName;
-                }
+                
 
 
 
@@ -349,17 +307,150 @@ namespace Cubeboot
 
         private void cmbCon_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            if (cmbCon.SelectedItem != null)
+            {
+                ComPort.BaudRate = 9600;
+                ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
+                verifierForm.test = ComPort;
 
+
+
+            }
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+            RefreshComPorts();
         }
 
         private void Boot1_Load_1(object sender, EventArgs e)
         {
+            try
+            {
+                btnBrowse.Visible = false;
+                Browseread.Visible = false;
+                richTextread.Visible = false;
+                richTextBox1.Visible = false;
 
+                // label2.Visible = false;
+                string[] ports = SerialPort.GetPortNames();
+                cmbCon.Items.AddRange(ports);
+                RefreshComPorts();
+                // public static System.Windows.Forms.Cursor WaitCursor { get; }
+                ////Cursor.Current = Cursors.WaitCursor;
+                ////Cursor.Current = Cursors.Default;
+                Application.UseWaitCursor = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void RunBtn_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string regexPattern = @"^COM\d+$";
+                Regex regex = new Regex(regexPattern);
+
+                if (!regex.IsMatch(cmbCon.Text) || (!checkErase.Checked && !checkverify.Checked && !checkread.Checked && !checkwrite.Checked && !checkBlank.Checked))
+                {
+                    MessageBox.Show("check Input ", "Erreur de port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                result.Clear();
+                RunBtn.Enabled = false;
+                // label2.Visible = true;
+                StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked);
+                //label2.Visible = true;
+                Application.UseWaitCursor = true;
+                //
+
+                //else
+                //{
+                //    MessageBox.Show("Please connect to the port first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
+            }
+            catch (Exception ex)
+
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void X_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnBrowse_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+
+                file.InitialDirectory = "c:\\";
+                file.Filter = "Hex Files (*.hex)|*.hex|All Files (*.*)|*.*";
+                file.FilterIndex = 2;
+                file.RestoreDirectory = true;
+                richTextBox1.Text = file.FileName;
+            }
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkverify_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkwrite_CheckedChanged(object sender, EventArgs e)
+        {
+            btnBrowse.Visible = true;
+            Browseread.Visible = false;
+            richTextread.Visible = false;
+            richTextBox1.Visible = true;
+        }
+
+        private void checkread_CheckedChanged(object sender, EventArgs e)
+        {
+            btnBrowse.Visible = false;
+            Browseread.Visible = true;
+            richTextread.Visible = true;
+            richTextBox1.Visible = false;
+        }
+
+        private void Browseread_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog folder = new OpenFileDialog();
+
+            if (folder.ShowDialog() == DialogResult.OK)
+            {
+                
+                folder.InitialDirectory = "c:\\" + "\read.hex ";
+            
+          
+            }
         }
     } 
 }

@@ -326,6 +326,8 @@
     <None Include="Resources\icons8-loading-circle1.gif" />
     <None Include="Resources\loading-gif-icon-16.jpg" />
     <None Include="Resources\loading-gif-icon-161.jpg" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\Hutchinson_%28Unternehmen%29_logo.svg.png" />
     <Content Include="Tools\Data_Base\STM32_Prog_DB_0x450_Dual_Core.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
