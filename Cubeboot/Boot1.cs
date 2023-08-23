@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Cubeboot
 {
@@ -207,22 +208,11 @@ namespace Cubeboot
                 //Browseread.Visible = false;
                 //richTextread.Visible = false;
                 //richTextBox1.Visible = true;
-                if (checkadress.Checked)
-                {
+                
+                
                     arguemnts += $"-w {richTextBox1.Text} 0x08000000 ";
-                }
-                else
-                {
-                    string regexPattern = @"^0x[0-9A-Fa-f]{8}$";
-                    string regexPattern1 = @"^\d{3}$";
-                    Regex regex = new Regex(regexPattern);
-                    Regex regex1 = new Regex(regexPattern1);
-                    if (regex.IsMatch(richTextBox2.Text) && regex1.IsMatch(richTextBox3.Text))
-                    {
-                        arguemnts += $"-w {richTextBox1.Text} {richTextBox2.Text} {richTextBox3.Text}";
-                    }
-
-                }
+                
+                
             }
             if (checkverify.Checked)
                 {
@@ -235,9 +225,19 @@ namespace Cubeboot
                 //Browseread.Visible = true;
                 //richTextread.Visible = true;
                 //richTextBox1.Visible = false;
-                arguemnts += $"-r 0x08000000 0x400 {richTextBox1.Text}";
+                
+                string regexPattern = @"^0x[0-9A-Fa-f]{8}$";
+                string regexPattern1 = @"^\d{3}$";
+                Regex regex = new Regex(regexPattern);
+                Regex regex1 = new Regex(regexPattern1);
+                if (regex.IsMatch(richTextBox2.Text) && regex1.IsMatch(richTextBox3.Text))
+                {
+                    arguemnts += $"-r {richTextBox2} {richTextBox3} {richTextread.Text}";
+                }
+
             }
-           if (checkBlank.Checked)
+           
+            if (checkBlank.Checked)
             {
                 arguemnts += "-blankcheck";
             }
@@ -391,6 +391,7 @@ namespace Cubeboot
 
         private void btnBrowse_Click_1(object sender, EventArgs e)
         {
+
             OpenFileDialog file = new OpenFileDialog();
 
             if (file.ShowDialog() == DialogResult.OK)
@@ -426,30 +427,55 @@ namespace Cubeboot
 
         private void checkwrite_CheckedChanged(object sender, EventArgs e)
         {
-            btnBrowse.Visible = true;
-            Browseread.Visible = false;
-            richTextread.Visible = false;
-            richTextBox1.Visible = true;
+            
+
+            if (checkwrite.Checked)
+            {
+                btnBrowse.Visible = true;
+                richTextBox1.Visible = true;
+            }
+            else
+            {
+                
+                btnBrowse.Visible = false;
+                richTextBox1.Visible = false;
+            }
+            if (!checkwrite.Checked)
+            {
+                richTextBox3.Clear();
+            }
+
+
         }
 
         private void checkread_CheckedChanged(object sender, EventArgs e)
         {
-            btnBrowse.Visible = false;
-            Browseread.Visible = true;
-            richTextread.Visible = true;
-            richTextBox1.Visible = false;
+            if (checkread.Checked)
+            {
+                Browseread.Visible = true;
+                richTextread.Visible = true;
+            }
+            else
+            {
+                Browseread.Visible = false;
+                richTextread.Visible = false;
+            }
+            if (!checkread.Checked)
+            {
+                richTextread.Clear();
+            }
         }
 
         private void Browseread_Click(object sender, EventArgs e)
         {
-            OpenFileDialog folder = new OpenFileDialog();
-
-            if (folder.ShowDialog() == DialogResult.OK)
+            using (var fbd = new FolderBrowserDialog())
             {
-                
-                folder.InitialDirectory = "c:\\" + "\read.hex ";
-            
-          
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    richTextread.Text = fbd.SelectedPath+"\\dboot.hex";
+                }
             }
         }
     } 
