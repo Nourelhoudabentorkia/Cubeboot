@@ -12,6 +12,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Cubeboot
 {
@@ -21,7 +23,10 @@ namespace Cubeboot
         programmer prog = new programmer();
         verifier verifierForm = new verifier();
         SerialPort ComPort = new SerialPort();
+
         public string[] AvailablePorts;//
+        //SerialPort serialPort = new SerialPort();
+
 
         private static string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
         private static string directory = Path.GetDirectoryName(exePath);
@@ -37,8 +42,6 @@ namespace Cubeboot
         {
             InitializeComponent();
 
-           
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,34 +54,36 @@ namespace Cubeboot
 
         }
 
-        
+
 
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
-
-        
-
-
         private void Boot1_Load(object sender, EventArgs e)
         {
-            string[] ports = SerialPort.GetPortNames();
-            cmbCon.Items.AddRange(ports);
-            RefreshComPorts();
-           
-
-
+            try
+            {
+               // label2.Visible = false;
+                string[] ports = SerialPort.GetPortNames();
+                cmbCon.Items.AddRange(ports);
+                RefreshComPorts();
+                // public static System.Windows.Forms.Cursor WaitCursor { get; }
+                ////Cursor.Current = Cursors.WaitCursor;
+                ////Cursor.Current = Cursors.Default;
+                Application.UseWaitCursor = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 
-        
 
-        private void Effacer_Click(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -87,90 +92,28 @@ namespace Cubeboot
 
         private void close_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
-        private void button2_Click_2(object sender, EventArgs e)
-        { if (button1.Text == "Disconnect")
-           { 
-                 verifierForm.Show();
-                    this.Hide();
-           }
-            
-        }
 
-        private void btnProg_Click_1(object sender, EventArgs e)
-        {
-            if(button1.Text== "Disconnect")
-            {
-              prog.Show();
-              this.Hide();
-            }
-            
-           
-        }
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
-
-            if (button1.Text == "Connect")
-            {
-                
-
-
-
-                if (cmbCon.SelectedItem != null)
-                {
-                    ComPort.BaudRate = 9600;
-                    ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
-                    ComPort.Open();
-                    verifierForm.test = ComPort; // Pass the list of ports to the verifier form
-                    button1.Text = "Disconnect";
-                    button1.BackColor = Color.Red;
-                    
-                }
-                else
-                {
-                    Label l = new Label();
-                    l.AutoSize = true;
-                    l.Text = "Please connect to the port first";
-                    l.Location = new Point(322, 145);
-                    l.Font = new Font("Cooper Black", 10);
-                    this.Controls.Add(l);
-
-                    //Button Mybutton = new Button();
-                    //Mybutton.Location = new Point(325, 198);
-                    //Mybutton.Text = "Submit";
-                    //Mybutton.AutoSize = true;
-                    //Mybutton.BackColor = Color.LightBlue;
-                    //Mybutton.Padding = new Padding(6);
-                    //Mybutton.Font = new Font("Cooper Black", 10);
-                    //this.Controls.Add(Mybutton);
-
-                    //Task.Delay(1000);
-                    //Mybutton.Visible = false;
-                    // l.Visible = false;
-
-                } 
-                
-            }
-            else
-            {   
-                ComPort.Close();
-                button1.Text = "Connect";
-                button1.BackColor = Color.Green;
-               
-
-            }
-
-
-
-
 
         }
+
+
+
+
+
+
+
+
+
         private void RefreshComPorts()
         {
             string[] availablePorts = SerialPort.GetPortNames();
@@ -198,95 +141,226 @@ namespace Cubeboot
 
         }
 
-        private void cmbCon_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbCon_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+            if (cmbCon.SelectedItem != null)
+            {
+                ComPort.BaudRate = 9600;
+                ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
+                verifierForm.test = ComPort;
+
+
+
+            }
             
         }
-       
-        
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RefreshComPorts();
-        }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void X_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnEff_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RunBtn_Click(object sender, EventArgs e)
-        {
-            if (checkVerify.Checked)
+            private void button3_Click(object sender, EventArgs e)
             {
-                StartCLICommand(ComPort.PortName);
+                RefreshComPorts();
             }
-        }
-        private async Task ReadOutputAsync()
-        {
 
-            using (StreamReader reader = _process.StandardOutput)
+            private void pictureBox3_Click(object sender, EventArgs e)
             {
-                while (!_process.HasExited)
+
+            }
+
+            private void X_Click(object sender, EventArgs e)
+            {
+                Application.Exit();
+            }
+
+
+
+            private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+            }
+
+
+            private async void RunBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string regexPattern = @"^COM\d+$";
+                Regex regex = new Regex(regexPattern);
+
+                if (!regex.IsMatch(cmbCon.Text) || (!checkErase.Checked && !checkverify.Checked && !checkread.Checked && !checkwrite.Checked && !checkBlank.Checked))
                 {
-                    int bytesRead = await reader.ReadAsync(buffer, 0, buffer.Length);
+                    MessageBox.Show("check Input ", "Erreur de port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
 
-                    if (bytesRead > 0)
+                result.Clear();
+                RunBtn.Enabled = false;
+                // label2.Visible = true;
+                StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked);
+                //label2.Visible = true;
+                Application.UseWaitCursor = true;
+                //
+
+                //else
+                //{
+                //    MessageBox.Show("Please connect to the port first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
+            }
+            catch (Exception ex)
+            
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+        }
+            private async Task ReadOutputAsync()
+            {
+
+                using (StreamReader reader = _process.StandardOutput)
+                {
+                    while (!_process.HasExited)
                     {
+                        int bytesRead = await reader.ReadAsync(buffer, 0, buffer.Length);
+
+
+                        if (bytesRead > 0)
+                        {
                         result.Invoke(new Action(() =>
                         {
                             result.Text += new string(buffer, 0, bytesRead);
+                            result.SelectionStart = result.TextLength;
+                            result.ScrollToCaret();
+                            RunBtn.Enabled = true;
+                            //label2.Visible = false;
+                            Application.UseWaitCursor = false;
+
 
                         }));
 
 
                     }
                 }
+                }
             }
-        }
 
 
 
-        public void StartCLICommand(string ComPort)
-        {
-            string arguemnts = $"-c {ComPort} -v";
-            _process = new Process
+            public void StartCLICommand(string ComPort, bool verif, bool erase, bool up, bool down, bool blank)
             {
-                StartInfo = new ProcessStartInfo
+                string arguemnts = $"-c port={ComPort} br=115200 ";
+                if (checkErase.Checked)
                 {
-                    FileName = srec_cat_path,
-                    Arguments = arguemnts,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = false,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                },
-                EnableRaisingEvents = true
-            };
+                    arguemnts += "-e all";
+                }
+            if (checkwrite.Checked)
+            {
 
-            _process.Start();
-            Task.Run(ReadOutputAsync);
-        }
+                arguemnts += $"-w {richTextBox1.Text} 0x08000000 ";
+            }
+            if (checkverify.Checked)
+                {
+                arguemnts += "-v";
+                }
+           
+            if (checkread.Checked)
+            {
+                arguemnts += $"-r 0x08000000 0x400 {richTextBox1.Text}";
+            }
+           if (checkBlank.Checked)
+            {
+                arguemnts += "-blankcheck";
+            }
+            _process = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = srec_cat_path,
+                        Arguments = arguemnts,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                    },
+                    EnableRaisingEvents = true
+                };
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+                _process.Start();
+                Task.Run(ReadOutputAsync);
+            }
+
+            private void textBox1_TextChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void btnbrowse_Click(object sender, EventArgs e)
+            {
+                OpenFileDialog file = new OpenFileDialog();
+
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+
+                    file.InitialDirectory = "c:\\";
+                    file.Filter = "Hex Files (*.hex)|*.hex|All Files (*.*)|*.*";
+                    file.FilterIndex = 2;
+                    file.RestoreDirectory = true;
+                richTextBox1.Text = file.FileName;
+                }
+
+
+
+            }
+
+        private void richTxtbrowse_TextChanged(object sender, EventArgs e)
         {
 
         }
-    }
+
+        private void checkBlank_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCon_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Boot1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+    } 
 }
+

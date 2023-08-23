@@ -72,6 +72,7 @@
     </Compile>
     <EmbeddedResource Include="Boot1.resx">
       <DependentUpon>Boot1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="programmer.resx">
       <DependentUpon>programmer.cs</DependentUpon>
@@ -84,6 +85,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="verifier.resx">
       <DependentUpon>verifier.cs</DependentUpon>
@@ -319,6 +321,44 @@
     <None Include="Tools\STM32ProgrammerCLI\HSM\data\P11_Objects_Table.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\icons8-loading-circle.gif" />
+    <None Include="Resources\icons8-loading-heart.gif" />
+    <None Include="Resources\icons8-loading-circle1.gif" />
+    <None Include="Resources\loading-gif-icon-16.jpg" />
+    <None Include="Resources\loading-gif-icon-161.jpg" />
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x450_Dual_Core.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x450_Single_Core.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x455.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x462.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x472.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x480.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x481.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x482.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x483.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x484.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Data_Base\STM32_Prog_DB_0x497.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Tools\STM32ProgrammerCLI\IN.hex">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -392,19 +432,45 @@
     <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_4M_Tiger.bin" />
     <None Include="Tools\STM32ProgrammerCLI\RSSe\U5\enc_signed_RSSe_sfi_U5_512K.bin" />
     <None Include="Tools\STM32ProgrammerCLI\RSSe\WL\enc_signed_RSSe_sfi.bin" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\key_area.kcsv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H5_2M.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H723_733_725_735_730.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H742_743_753_750.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H745_755_747_757.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H7A_B.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L462.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L5.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_2M.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_4M.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_512K.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WBA.csv" />
-    <None Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WL.csv" />
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\key_area.kcsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H5_2M.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H723_733_725_735_730.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H742_743_753_750.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H745_755_747_757.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_H7A_B.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L462.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_L5.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_2M.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_4M.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_U5_512K.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WBA.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\SFI_OB_CSV_FILES\SFI_OB_WL.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Tools\STM32ProgrammerCLI\stlibp11_SAM.conf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -797,18 +863,42 @@
     <Content Include="Tools\STM32ProgrammerCLI\STM32_Programmer_CLI.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_CertifGen_Data_Base\STM32_CertifGen_DB_0x484.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Dual_Core.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Single_Core.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x455.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x462.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x472.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x480.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x481.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x482.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x483.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x484.xml" />
-    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x497.xml" />
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_CertifGen_Data_Base\STM32_CertifGen_DB_0x484.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Dual_Core.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x450_Single_Core.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x455.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x462.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x472.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x480.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x481.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x482.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x483.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x484.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\STM32ProgrammerCLI\TPC_SFI_OB_Data_Base\STM32_Prog_DB_0x497.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Tools\STM32ProgrammerCLI\Utilities\Windows\imgtool.exe" />
     <Content Include="Tools\STM32ProgrammerCLI\Utilities\Windows\PSA_ADAC.exe" />
     <Content Include="Tools\STM32ProgrammerCLI\xerces-c_3_1.dll">
