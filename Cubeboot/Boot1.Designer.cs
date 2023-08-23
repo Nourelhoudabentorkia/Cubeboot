@@ -45,9 +45,10 @@
             this.checkread = new System.Windows.Forms.CheckBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.checkadress = new System.Windows.Forms.CheckBox();
             this.richTextread = new System.Windows.Forms.RichTextBox();
             this.Browseread = new System.Windows.Forms.Button();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.manual = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,8 +61,9 @@
             this.result.Location = new System.Drawing.Point(361, 109);
             this.result.Multiline = true;
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(430, 291);
+            this.result.Size = new System.Drawing.Size(430, 264);
             this.result.TabIndex = 0;
+            this.result.TextChanged += new System.EventHandler(this.result_TextChanged);
             // 
             // RunBtn
             // 
@@ -232,15 +234,6 @@
             this.richTextBox3.Text = "";
             this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
             // 
-            // checkadress
-            // 
-            this.checkadress.AutoSize = true;
-            this.checkadress.Location = new System.Drawing.Point(238, 84);
-            this.checkadress.Name = "checkadress";
-            this.checkadress.Size = new System.Drawing.Size(15, 14);
-            this.checkadress.TabIndex = 17;
-            this.checkadress.UseVisualStyleBackColor = true;
-            // 
             // richTextread
             // 
             this.richTextread.Location = new System.Drawing.Point(361, 43);
@@ -261,13 +254,36 @@
             this.Browseread.UseVisualStyleBackColor = true;
             this.Browseread.Click += new System.EventHandler(this.Browseread_Click);
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(361, 392);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(315, 29);
+            this.richTextBox4.TabIndex = 21;
+            this.richTextBox4.Text = "";
+            this.richTextBox4.TextChanged += new System.EventHandler(this.richTextBox4_TextChanged);
+            // 
+            // manual
+            // 
+            this.manual.BackColor = System.Drawing.Color.DodgerBlue;
+            this.manual.Font = new System.Drawing.Font("3ds", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manual.ForeColor = System.Drawing.Color.AliceBlue;
+            this.manual.Location = new System.Drawing.Point(692, 392);
+            this.manual.Name = "manual";
+            this.manual.Size = new System.Drawing.Size(99, 29);
+            this.manual.TabIndex = 20;
+            this.manual.Text = "Manual";
+            this.manual.UseVisualStyleBackColor = false;
+            this.manual.Click += new System.EventHandler(this.manual_Click);
+            // 
             // Boot1
             // 
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(803, 433);
+            this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.manual);
             this.Controls.Add(this.richTextread);
             this.Controls.Add(this.Browseread);
-            this.Controls.Add(this.checkadress);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.checkread);
@@ -314,8 +330,9 @@
         private System.Windows.Forms.CheckBox checkread;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.CheckBox checkadress;
         private System.Windows.Forms.RichTextBox richTextread;
         private System.Windows.Forms.Button Browseread;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Button manual;
     }
 }

@@ -181,12 +181,13 @@ namespace Cubeboot
                             result.SelectionStart = result.TextLength;
                             result.ScrollToCaret();
                             RunBtn.Enabled = true;
-                            //label2.Visible = false;
+                            manual.Enabled = true;
                             Application.UseWaitCursor = false;
+                            //MessageBox.Show("Valid", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                         }));
-
+                        
 
                     }
                 }
@@ -195,7 +196,7 @@ namespace Cubeboot
 
 
 
-            public void StartCLICommand(string ComPort, bool verif, bool erase, bool up, bool down, bool blank)
+            public void StartCLICommand(string ComPort, bool verif, bool erase, bool up, bool down, bool blank, bool manually)
             {
                 string arguemnts = $"-c port={ComPort} br=115200 ";
                 if (checkErase.Checked)
@@ -232,14 +233,19 @@ namespace Cubeboot
                 Regex regex1 = new Regex(regexPattern1);
                 if (regex.IsMatch(richTextBox2.Text) && regex1.IsMatch(richTextBox3.Text))
                 {
-                    arguemnts += $"-r {richTextBox2} {richTextBox3} {richTextread.Text}";
+                    arguemnts += $"-r {richTextBox2.Text} {richTextBox3.Text} {richTextread.Text}";
                 }
+                
 
             }
            
             if (checkBlank.Checked)
             {
                 arguemnts += "-blankcheck";
+            }
+            if(manual.Enabled)
+            {
+                arguemnts = $" { richTextBox4.Text} ";
             }
             _process = new Process
                 {
@@ -340,6 +346,7 @@ namespace Cubeboot
                 ////Cursor.Current = Cursors.WaitCursor;
                 ////Cursor.Current = Cursors.Default;
                 Application.UseWaitCursor = false;
+                result.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -366,9 +373,12 @@ namespace Cubeboot
                 result.Clear();
                 RunBtn.Enabled = false;
                 // label2.Visible = true;
-                StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked);
-                //label2.Visible = true;
                 Application.UseWaitCursor = true;
+
+
+                StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked ,manual.Enabled);
+               
+
                 //
 
                 //else
@@ -477,6 +487,41 @@ namespace Cubeboot
                     richTextread.Text = fbd.SelectedPath+"\\dboot.hex";
                 }
             }
+        }
+
+        private void result_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manual_Click(object sender, EventArgs e)
+        {
+            RunBtn.Enabled = false;
+            manual.Enabled = false;
+            result.Clear();
+            _process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = srec_cat_path,
+                    Arguments = richTextBox4.Text,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                },
+                EnableRaisingEvents = true
+            };
+
+            _process.Start();
+            Task.Run(ReadOutputAsync);
+
+        }
+
+        private void richTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     } 
 }
