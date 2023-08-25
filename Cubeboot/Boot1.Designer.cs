@@ -68,6 +68,7 @@
             // RunBtn
             // 
             this.RunBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.RunBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RunBtn.Font = new System.Drawing.Font("3ds", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RunBtn.ForeColor = System.Drawing.Color.AliceBlue;
             this.RunBtn.Location = new System.Drawing.Point(25, 295);
@@ -85,7 +86,7 @@
             this.checkErase.ForeColor = System.Drawing.Color.DodgerBlue;
             this.checkErase.Location = new System.Drawing.Point(25, 150);
             this.checkErase.Name = "checkErase";
-            this.checkErase.Size = new System.Drawing.Size(69, 23);
+            this.checkErase.Size = new System.Drawing.Size(100, 33);
             this.checkErase.TabIndex = 2;
             this.checkErase.Text = "Erase";
             this.checkErase.UseVisualStyleBackColor = true;
@@ -97,7 +98,7 @@
             this.checkverify.ForeColor = System.Drawing.Color.DodgerBlue;
             this.checkverify.Location = new System.Drawing.Point(25, 179);
             this.checkverify.Name = "checkverify";
-            this.checkverify.Size = new System.Drawing.Size(75, 23);
+            this.checkverify.Size = new System.Drawing.Size(107, 33);
             this.checkverify.TabIndex = 3;
             this.checkverify.Text = "Verify";
             this.checkverify.UseVisualStyleBackColor = true;
@@ -110,7 +111,7 @@
             this.checkwrite.ForeColor = System.Drawing.Color.DodgerBlue;
             this.checkwrite.Location = new System.Drawing.Point(25, 208);
             this.checkwrite.Name = "checkwrite";
-            this.checkwrite.Size = new System.Drawing.Size(108, 23);
+            this.checkwrite.Size = new System.Drawing.Size(153, 33);
             this.checkwrite.TabIndex = 4;
             this.checkwrite.Text = "Download";
             this.checkwrite.UseVisualStyleBackColor = true;
@@ -123,7 +124,7 @@
             this.checkBlank.ForeColor = System.Drawing.Color.DodgerBlue;
             this.checkBlank.Location = new System.Drawing.Point(25, 266);
             this.checkBlank.Name = "checkBlank";
-            this.checkBlank.Size = new System.Drawing.Size(115, 23);
+            this.checkBlank.Size = new System.Drawing.Size(166, 33);
             this.checkBlank.TabIndex = 5;
             this.checkBlank.Text = "BlankCheck";
             this.checkBlank.UseVisualStyleBackColor = true;
@@ -133,7 +134,7 @@
             this.cmbCon.FormattingEnabled = true;
             this.cmbCon.Location = new System.Drawing.Point(65, 123);
             this.cmbCon.Name = "cmbCon";
-            this.cmbCon.Size = new System.Drawing.Size(167, 21);
+            this.cmbCon.Size = new System.Drawing.Size(167, 28);
             this.cmbCon.TabIndex = 6;
             this.cmbCon.SelectedIndexChanged += new System.EventHandler(this.cmbCon_SelectedIndexChanged_1);
             // 
@@ -145,7 +146,7 @@
             this.X.ForeColor = System.Drawing.Color.Red;
             this.X.Location = new System.Drawing.Point(775, -1);
             this.X.Name = "X";
-            this.X.Size = new System.Drawing.Size(27, 25);
+            this.X.Size = new System.Drawing.Size(39, 37);
             this.X.TabIndex = 7;
             this.X.Text = "X";
             this.X.Click += new System.EventHandler(this.X_Click_1);
@@ -184,6 +185,8 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("3ds", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnBrowse.Location = new System.Drawing.Point(692, 78);
@@ -210,7 +213,7 @@
             this.checkread.ForeColor = System.Drawing.Color.DodgerBlue;
             this.checkread.Location = new System.Drawing.Point(25, 237);
             this.checkread.Name = "checkread";
-            this.checkread.Size = new System.Drawing.Size(83, 23);
+            this.checkread.Size = new System.Drawing.Size(119, 33);
             this.checkread.TabIndex = 14;
             this.checkread.Text = "Upload";
             this.checkread.UseVisualStyleBackColor = true;
@@ -244,6 +247,8 @@
             // 
             // Browseread
             // 
+            this.Browseread.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.Browseread.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Browseread.Font = new System.Drawing.Font("3ds", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browseread.ForeColor = System.Drawing.Color.DodgerBlue;
             this.Browseread.Location = new System.Drawing.Point(692, 43);
@@ -266,6 +271,7 @@
             // manual
             // 
             this.manual.BackColor = System.Drawing.Color.DodgerBlue;
+            this.manual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manual.Font = new System.Drawing.Font("3ds", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manual.ForeColor = System.Drawing.Color.AliceBlue;
             this.manual.Location = new System.Drawing.Point(692, 392);
@@ -302,7 +308,7 @@
             this.Controls.Add(this.result);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Boot1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.Boot1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

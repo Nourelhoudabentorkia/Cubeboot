@@ -337,16 +337,12 @@ namespace Cubeboot
                 Browseread.Visible = false;
                 richTextread.Visible = false;
                 richTextBox1.Visible = false;
-
-                // label2.Visible = false;
                 string[] ports = SerialPort.GetPortNames();
                 cmbCon.Items.AddRange(ports);
                 RefreshComPorts();
-                // public static System.Windows.Forms.Cursor WaitCursor { get; }
-                ////Cursor.Current = Cursors.WaitCursor;
-                ////Cursor.Current = Cursors.Default;
                 Application.UseWaitCursor = false;
                 result.ReadOnly = true;
+             
             }
             catch (Exception ex)
             {
