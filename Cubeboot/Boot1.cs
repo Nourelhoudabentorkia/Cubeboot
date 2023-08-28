@@ -20,7 +20,8 @@ namespace Cubeboot
 {
     public partial class Boot1 : Form
 
-    {
+    {// scroll 
+
         programmer prog = new programmer();
         verifier verifierForm = new verifier();
         SerialPort ComPort = new SerialPort();
@@ -180,6 +181,8 @@ namespace Cubeboot
                             result.Text += new string(buffer, 0, bytesRead);
                             result.SelectionStart = result.TextLength;
                             result.ScrollToCaret();
+                         
+
                             RunBtn.Enabled = true;
                             manual.Enabled = true;
                             Application.UseWaitCursor = false;
@@ -342,7 +345,9 @@ namespace Cubeboot
                 RefreshComPorts();
                 Application.UseWaitCursor = false;
                 result.ReadOnly = true;
-             
+                result.Multiline = true;
+                result.ScrollBars = ScrollBars.Both;
+
             }
             catch (Exception ex)
             {
@@ -366,8 +371,9 @@ namespace Cubeboot
                 }
 
 
-                result.Clear();
                 RunBtn.Enabled = false;
+                manual.Enabled = false;
+                result.Clear();
                 // label2.Visible = true;
                 Application.UseWaitCursor = true;
 
@@ -492,30 +498,46 @@ namespace Cubeboot
 
         private void manual_Click(object sender, EventArgs e)
         {
-            RunBtn.Enabled = false;
-            manual.Enabled = false;
-            result.Clear();
-            _process = new Process
+            if ( !string.IsNullOrEmpty(richTextBox4.Text))
             {
-                StartInfo = new ProcessStartInfo
+                RunBtn.Enabled = false;
+                manual.Enabled = false;
+                result.Clear();
+                _process = new Process
                 {
-                    FileName = srec_cat_path,
-                    Arguments = richTextBox4.Text,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                },
-                EnableRaisingEvents = true
-            };
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = srec_cat_path,
+                        Arguments = richTextBox4.Text,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                    },
+                    EnableRaisingEvents = true
+                };
 
-            _process.Start();
-            Task.Run(ReadOutputAsync);
+                _process.Start();
+                Task.Run(ReadOutputAsync);
+
+            }
+            else
+            {
+
+                MessageBox.Show("Please send a valid command to proceed.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
 
         }
 
         private void richTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
         }
