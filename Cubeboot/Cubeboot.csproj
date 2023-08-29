@@ -52,30 +52,12 @@
     <Compile Include="Boot1.Designer.cs">
       <DependentUpon>Boot1.cs</DependentUpon>
     </Compile>
-    <Compile Include="boutton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Common\CLI.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="programmer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="programmer.designer.cs">
-      <DependentUpon>programmer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="verifier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="verifier.designer.cs">
-      <DependentUpon>verifier.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Boot1.resx">
       <DependentUpon>Boot1.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="programmer.resx">
-      <DependentUpon>programmer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,9 +69,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="verifier.resx">
-      <DependentUpon>verifier.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
