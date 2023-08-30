@@ -22,8 +22,7 @@ namespace Cubeboot
 
     {// scroll 
 
-        programmer prog = new programmer();
-        verifier verifierForm = new verifier();
+     
         SerialPort ComPort = new SerialPort();
 
         public string[] AvailablePorts;//
@@ -320,7 +319,7 @@ namespace Cubeboot
             {
                 ComPort.BaudRate = 9600;
                 ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
-                verifierForm.test = ComPort;
+                //verifierForm.test = ComPort;
 
 
 
