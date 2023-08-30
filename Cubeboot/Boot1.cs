@@ -20,18 +20,14 @@ namespace Cubeboot
 {
     public partial class Boot1 : Form
 
-    {// scroll 
+    {
 
      
         SerialPort ComPort = new SerialPort();
 
-        public string[] AvailablePorts;//
-        //SerialPort serialPort = new SerialPort();
-
-
+        public string[] AvailablePorts;
         private static string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
         private static string directory = Path.GetDirectoryName(exePath);
-
         private string srec_cat_path = $"{directory}\\Tools\\STM32ProgrammerCLI\\STM32_Programmer_CLI.exe";
 
         private Process _process;
@@ -319,6 +315,8 @@ namespace Cubeboot
             {
                 ComPort.BaudRate = 9600;
                 ComPort.PortName = cmbCon.SelectedItem.ToString(); ;
+
+
                 //verifierForm.test = ComPort;
 
 
@@ -337,6 +335,8 @@ namespace Cubeboot
             {
                 btnBrowse.Visible = false;
                 Browseread.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
                 richTextread.Visible = false;
                 richTextBox1.Visible = false;
                 string[] ports = SerialPort.GetPortNames();
@@ -443,6 +443,7 @@ namespace Cubeboot
             if (checkwrite.Checked)
             {
                 btnBrowse.Visible = true;
+                label4.Visible = true;
                 richTextBox1.Visible = true;
             }
             else
@@ -450,6 +451,7 @@ namespace Cubeboot
                 
                 btnBrowse.Visible = false;
                 richTextBox1.Visible = false;
+                label4.Visible = false;
             }
             if (!checkwrite.Checked)
             {
@@ -465,11 +467,13 @@ namespace Cubeboot
             {
                 Browseread.Visible = true;
                 richTextread.Visible = true;
+                label3.Visible = true;
             }
             else
             {
                 Browseread.Visible = false;
                 richTextread.Visible = false;
+                label3.Visible = false;
             }
             if (!checkread.Checked)
             {
@@ -537,6 +541,21 @@ namespace Cubeboot
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
