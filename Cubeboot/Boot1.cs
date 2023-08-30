@@ -21,7 +21,7 @@ namespace Cubeboot
     public partial class Boot1 : Form
 
     {
-
+        //
      
         SerialPort ComPort = new SerialPort();
 
@@ -181,7 +181,7 @@ namespace Cubeboot
                             RunBtn.Enabled = true;
                             manual.Enabled = true;
                             Application.UseWaitCursor = false;
-                            //MessageBox.Show("Valid", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
 
 
                         }));
@@ -203,10 +203,7 @@ namespace Cubeboot
                 }
             if (checkwrite.Checked)
             {
-                //btnBrowse.Visible = true;
-                //Browseread.Visible = false;
-                //richTextread.Visible = false;
-                //richTextBox1.Visible = true;
+               
                 
                 
                     arguemnts += $"-w {richTextBox1.Text} 0x08000000 ";
@@ -220,10 +217,7 @@ namespace Cubeboot
            
             if (checkread.Checked)
             {
-                //btnBrowse.Visible = false;
-                //Browseread.Visible = true;
-                //richTextread.Visible = true;
-                //richTextBox1.Visible = false;
+                
                 
                 string regexPattern = @"^0x[0-9A-Fa-f]{8}$";
                 string regexPattern1 = @"^\d{3}$";
@@ -373,19 +367,14 @@ namespace Cubeboot
                 RunBtn.Enabled = false;
                 manual.Enabled = false;
                 result.Clear();
-                // label2.Visible = true;
+               
                 Application.UseWaitCursor = true;
 
 
                 StartCLICommand(ComPort.PortName, checkErase.Checked, checkverify.Checked, checkread.Checked, checkwrite.Checked, checkBlank.Checked ,manual.Enabled);
                
 
-                //
-
-                //else
-                //{
-                //    MessageBox.Show("Please connect to the port first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
+                
             }
             catch (Exception ex)
 
